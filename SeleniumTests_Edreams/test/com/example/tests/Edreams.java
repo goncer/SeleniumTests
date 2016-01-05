@@ -27,18 +27,18 @@ public class Edreams {
 
   @Test
   public void testEdreams() throws InterruptedException  {
-      try
-      {
+    try
+    {
     WebDriverWait wait = new WebDriverWait(driver, 10);
-    
     driver.get(baseUrl);
     driver.findElement(By.xpath("//div[@id='flights-manager']/div[2]/div/ul/li")).click();
     driver.findElement(By.cssSelector("input.od-airportselector-input.airportselector_input")).clear();
     driver.findElement(By.cssSelector("input.od-airportselector-input.airportselector_input")).sendKeys("Mad");
           Thread.sleep(5000);
+          //Thread.sleep(1000);
     driver.findElement(By.cssSelector("input.od-airportselector-input.airportselector_input")).sendKeys(Keys.RETURN);
-    //wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("css=button.closeBtn.od-flightsManager-close-button")));
-    //driver.findElement(By.cssSelector("css=button.closeBtn.od-flightsManager-close-button")).click();
+    wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("css=button.closeBtn.od-flightsManager-close-button")));
+    driver.findElement(By.cssSelector("css=button.closeBtn.od-flightsManager-close-button")).click();
     
     driver.findElement(By.xpath("//div[@id='pax-selector']/div/div/div/span[2]")).click();
     driver.findElement(By.cssSelector("div.od-aside-button.inc")).click();
