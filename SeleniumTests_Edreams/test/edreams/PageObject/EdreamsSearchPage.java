@@ -28,6 +28,7 @@ public class EdreamsSearchPage {
     private static final By PassagerSelectCMB = By.cssSelector("div.paxselector_label.od-moreoptions-label");
     private static final By AddChildBtn = By.xpath("div[@id='pax-selector']/div/div/div[2]/div[2]/div/div[2]/div/div[3]");
     private static final By ManageFlightBtn = By.xpath("//div[@id='flights-manager']/div[2]/div/ul/li");
+    private static final By PassengersSelectTxT =  By.id("passengers_selector");
     
    public EdreamsSearchPage(WebDriver driver) {
       this.driver = driver;
@@ -75,5 +76,8 @@ public class EdreamsSearchPage {
         driver.findElement(By.xpath("//div[@id='pax-selector']/div/div/div[2]/div[2]/div/div[2]/div/div[2]")).click();
     }
  
+    public String getPassangerSelectLiteral(){
+        return driver.findElement(PassengersSelectTxT).getText();
+    }
 }
 
