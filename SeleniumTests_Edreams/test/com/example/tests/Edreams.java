@@ -76,7 +76,7 @@ public class Edreams {
         driver.findElement(By.xpath("//div[@id='pax-selector']/div/div/div[2]/div[3]/div/div[2]/div/div[3]")).click();
         driver.findElement(By.xpath("//div[@id='pax-selector']/div/div/div[2]/div[3]/div/div[2]/div/div[2]")).click();
         driver.findElement(By.xpath("//div[@id='pax-selector']/div/div/div[2]/div[2]/div/div[2]/div/div[2]")).click();
-        assertEquals(takeScreenShot("Assert"),"2 adults", driver.findElement(By.id("passengers_selector")).getText());
+        assertEquals(takeScreenShot("Assert"),"2 Adults", driver.findElement(By.id("passengers_selector")).getText());
     } 
     catch (Exception ex)
     {
@@ -112,9 +112,9 @@ public class Edreams {
         page.open();
         page.search("mad","",2,3);
         
-        assertEquals("2 adults", page.getPassangerSelectLiteral());
-        assertEquals("2 adults", driver.findElement(By.id("passengers_selector")).getText(),
-                takeScreenShot("Assert" + new Date() + name.getMethodName()));
+        assertEquals("2 Adults", page.getPassangerSelectLiteral());
+        assertEquals("2 Adults", driver.findElement(By.id("passengers_selector")).getText());
+        //takeScreenShot("Assert" + new Date() + name.getMethodName()));
         
           
     } 
